@@ -10,19 +10,19 @@ import XCTest
 @testable import SwiftLogger
 
 class LogLevelTests: XCTestCase {
-    
+
     var allLogValues: [LogLevel] = [.verbose, .debug, .info, .warn, .error, .fatal, .off]
-    
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
     func testLogLevel_comparableDebug() {
         let actual = LogLevel.debug
         let debug = LogLevel.debug
@@ -36,7 +36,7 @@ class LogLevelTests: XCTestCase {
         let fatal = LogLevel.fatal
         XCTAssertGreaterThan(fatal, actual)
     }
-    
+
     func testLogLevel_comparableInfo() {
         let actual = LogLevel.info
         let debug = LogLevel.debug
@@ -50,7 +50,7 @@ class LogLevelTests: XCTestCase {
         let fatal = LogLevel.fatal
         XCTAssertGreaterThan(fatal, actual)
     }
-    
+
     func testLogLevel_comparableWarn() {
         let actual = LogLevel.warn
         let debug = LogLevel.debug
@@ -64,7 +64,7 @@ class LogLevelTests: XCTestCase {
         let fatal = LogLevel.fatal
         XCTAssertGreaterThan(fatal, actual)
     }
-    
+
     func testLogLevel_comparableError() {
         let actual = LogLevel.error
         let debug = LogLevel.debug
@@ -78,7 +78,7 @@ class LogLevelTests: XCTestCase {
         let fatal = LogLevel.fatal
         XCTAssertGreaterThan(fatal, actual)
     }
-    
+
     func testLogLevel_comparableFatal() {
         let actual = LogLevel.fatal
         let debug = LogLevel.debug
@@ -92,7 +92,7 @@ class LogLevelTests: XCTestCase {
         let fatal = LogLevel.fatal
         XCTAssertLessThanOrEqual(fatal, actual)
     }
-    
+
     func testLogLevel_description() {
         for level in allLogValues {
             if level != .off {
@@ -102,5 +102,5 @@ class LogLevelTests: XCTestCase {
             }
         }
     }
-    
+
 }
