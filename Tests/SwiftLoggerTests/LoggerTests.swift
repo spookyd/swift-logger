@@ -261,6 +261,8 @@ class MockAppender: Appender {
     var output: String?
     var level: LogLevel?
 
+    var loglevel: LogLevel = .verbose
+    
     var formatter: SwiftLogger.Formatter?
 
     var identifier: String
@@ -284,6 +286,8 @@ class MockFulfillmentAppender: Appender {
 
     var expectation: XCTestExpectation?
     var executedOnMainThread: Bool?
+    
+    var loglevel: LogLevel = .verbose
 
     var formatter: SwiftLogger.Formatter?
 

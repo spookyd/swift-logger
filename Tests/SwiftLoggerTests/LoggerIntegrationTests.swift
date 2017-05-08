@@ -87,6 +87,8 @@ class CollectionAppender: Appender {
     var collectedLogStrings: [(LogLevel, String)] = []
 
     var identifier: String
+    
+    var loglevel: LogLevel = .verbose
 
     var formatter: SwiftLogger.Formatter?
 

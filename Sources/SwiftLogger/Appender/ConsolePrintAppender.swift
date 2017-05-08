@@ -11,6 +11,8 @@ import Foundation
 public class ConsolePrintAppender: Appender {
 
     public var identifier: String = "com.lucky13.printOutput"
+    
+    public var loglevel: LogLevel = .verbose
 
     public var formatter: SwiftLogger.Formatter?
 

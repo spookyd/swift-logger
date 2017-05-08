@@ -18,11 +18,9 @@ public protocol Appender {
 
     /// The formatter to be used to format the log message before it is sent to the appender
     var formatter: Formatter? { get set }
-
-    /**
-     Required initializer for creating an Appender
-     */
-//    init(identifier: String)
+    
+    /// The maximum level of logging output for the given appender
+    var loglevel: LogLevel { get }
 
     /**
      Invoked after logging message has been formatted
@@ -36,6 +34,9 @@ public protocol Appender {
 extension Appender {
 
     func log(_ level: LogLevel, _ output: String, _ loggingInfo: LoggingInfo?) {
+        if level < loglevel {
+            return
+        }
         let formattedOutput = formatter?.format(output, loggingInfo) ?? output
         sendLog(level, formattedOutput)
     }

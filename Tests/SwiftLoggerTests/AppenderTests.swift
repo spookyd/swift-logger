@@ -23,7 +23,23 @@ class AppenderTests: XCTestCase {
 
     func testExecuteLog() {
         let appender = MockAppender()
-        appender.log(.debug, UUID().uuidString, nil)
+        let expectedLevel: LogLevel = .debug
+        let expectedMessage = UUID().uuidString
+        appender.log(expectedLevel, expectedMessage, nil)
+        XCTAssertEqual(expectedLevel, appender.level)
+        XCTAssertEqual(expectedMessage, appender.output)
+    }
+    
+    func testExecuteLog_lowerLogLevel() {
+        let appender = MockAppender()
+        appender.loglevel = .error
+        let expectedLevel: LogLevel = .debug
+        let expectedMessage = UUID().uuidString
+        appender.log(expectedLevel, expectedMessage, nil)
+        XCTAssertNotEqual(expectedLevel, appender.level)
+        XCTAssertNotEqual(expectedMessage, appender.output)
+        XCTAssertNil(appender.level)
+        XCTAssertNil(appender.output)
     }
 
     func testAppenders_utilizeFormatters() {
