@@ -10,11 +10,11 @@ import XCTest
 @testable import SwiftLogger
 
 class LoggerIntegrationTests: XCTestCase {
-    
+
     var factory: LoggerFactory!
     var logger: Logger!
     var appender: CollectionAppender!
-    
+
     override func setUp() {
         super.setUp()
         appender = CollectionAppender()
@@ -24,12 +24,12 @@ class LoggerIntegrationTests: XCTestCase {
         factory.set(configuration: config)
         logger = factory.getLogger(UUID().uuidString)
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
     func testMinimumLogger_debug() {
         let expected = UUID().uuidString
         logger.debug(expected)
@@ -38,7 +38,7 @@ class LoggerIntegrationTests: XCTestCase {
         XCTAssertEqual(expected, actual.first?.1)
         XCTAssertEqual(LogLevel.debug, actual.first?.0)
     }
-    
+
     func testMultipleAppenders() {
         let secondAppender = CollectionAppender()
         factory.appenders = ["1": self.appender, "2": secondAppender]
@@ -46,7 +46,7 @@ class LoggerIntegrationTests: XCTestCase {
         XCTAssertEqual(1, appender.collectedLogStrings.count)
         XCTAssertEqual(1, secondAppender.collectedLogStrings.count)
     }
-    
+
     /// Validates functionality when using logger through the factory
     func testMultipleLoggers_managed_withDifferentLevel() {
         let secondAppender = CollectionAppender()
@@ -61,7 +61,7 @@ class LoggerIntegrationTests: XCTestCase {
         XCTAssertEqual(2, appender.collectedLogStrings.count)
         XCTAssertEqual(2, secondAppender.collectedLogStrings.count)
     }
-    
+
     /// Exercises the different ways loggers and appenders interact
     func testMultipleLoggers_withDifferentAppenders() {
         // Test each logger has their own appender
@@ -79,24 +79,33 @@ class LoggerIntegrationTests: XCTestCase {
         XCTAssertEqual(1, appender.collectedLogStrings.count)
         XCTAssertEqual(1, someOtherAppender.collectedLogStrings.count)
     }
-    
-    
+
+    /// Validates Configuration is set on the logger factory
+    func testSetConfiguration() {
+        var configuration = Configuration.default
+        configuration.add(appender: CollectionAppender())
+        Logger.setConfiguration(configuration: configuration)
+        XCTAssertEqual(1, logger.appenders.count)
+    }
+
 }
 
 class CollectionAppender: Appender {
-    
+
     var collectedLogStrings: [(LogLevel, String)] = []
-    
+
     var identifier: String
     
-    var formatter: SwiftLogger.Formatter? = nil
-    
+    var loglevel: LogLevel = .verbose
+
+    var formatter: SwiftLogger.Formatter?
+
     required init(identifier: String = UUID().uuidString) {
         self.identifier = identifier
     }
-    
+
     func sendLog(_ level: LogLevel, _ output: String) {
         collectedLogStrings.append((level, output))
     }
-    
+
 }

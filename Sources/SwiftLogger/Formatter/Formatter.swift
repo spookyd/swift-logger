@@ -20,9 +20,9 @@ public struct LoggingInfoKey {
 }
 
 public protocol Formatter {
-    
+
     var identifier: String { get }
-    
+
     func format(_ message: String, _ additionalInfo: LoggingInfo?) -> String
-    
+
 }

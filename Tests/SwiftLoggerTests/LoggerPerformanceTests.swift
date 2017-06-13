@@ -10,9 +10,9 @@ import XCTest
 @testable import SwiftLogger
 
 class LoggerPerformanceTests: XCTestCase {
-    
+
     var appender: Appender!
-    
+
     override func setUp() {
         super.setUp()
         let formatter = BasicLayoutFormatter()
@@ -20,7 +20,7 @@ class LoggerPerformanceTests: XCTestCase {
         formatter.layout = layout
         appender = ConsolePrintAppender(formatter: formatter)
     }
-    
+
     override func tearDown() {
         appender = nil
         super.tearDown()
@@ -35,7 +35,7 @@ class LoggerPerformanceTests: XCTestCase {
             }
         }
     }
-    
+
     func testAsyncLoggingPerformance() {
         let logger = Logger(named: "com.lucky13.performance.test")
         logger.appenders = [appender]
@@ -54,7 +54,7 @@ class LoggerPerformanceTests: XCTestCase {
         }
         print("Completing Async Performance Test")
     }
-    
+
     func testLoggerFactoryPerformance() {
         let logger = Logger.getLogger(by: "com.lucky13.performance.factory.test")
         logger.appenders = [appender]

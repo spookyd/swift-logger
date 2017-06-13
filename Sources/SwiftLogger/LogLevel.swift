@@ -23,7 +23,7 @@ public enum LogLevel: Int {
 }
 
 extension LogLevel: CustomStringConvertible {
-    
+
     public var description: String {
         switch self {
         case .verbose: return "VERBOSE"
@@ -35,24 +35,24 @@ extension LogLevel: CustomStringConvertible {
         case .off: return ""
         }
     }
-    
+
 }
 
 extension LogLevel: Comparable {
-    
-    public static func <(lhs: LogLevel, rhs: LogLevel) -> Bool {
+
+    public static func < (lhs: LogLevel, rhs: LogLevel) -> Bool {
         return lhs.rawValue < rhs.rawValue
     }
-    
-    public static func <=(lhs: LogLevel, rhs: LogLevel) -> Bool {
+
+    public static func <= (lhs: LogLevel, rhs: LogLevel) -> Bool {
         return lhs.rawValue <= rhs.rawValue
     }
-    
-    public static func >=(lhs: LogLevel, rhs: LogLevel) -> Bool {
+
+    public static func >= (lhs: LogLevel, rhs: LogLevel) -> Bool {
         return lhs.rawValue >= rhs.rawValue
     }
-    
-    public static func >(lhs: LogLevel, rhs: LogLevel) -> Bool {
+
+    public static func > (lhs: LogLevel, rhs: LogLevel) -> Bool {
         return lhs.rawValue > rhs.rawValue
     }
 }

@@ -2,13 +2,13 @@ import XCTest
 @testable import SwiftLogger
 
 class LoggerTests: XCTestCase {
-    
+
     func testCreateLogger() {
         let expected = UUID().uuidString
         let logger = Logger(named: expected)
         XCTAssertEqual(expected, logger.identifier)
     }
-    
+
     func testDebug() {
         let expected = UUID().uuidString
         let level = LogLevel.debug
@@ -20,7 +20,7 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(expected, appender.output)
         XCTAssertEqual(level, appender.level!)
     }
-    
+
     func testInfo() {
         let expected = UUID().uuidString
         let level = LogLevel.info
@@ -32,7 +32,7 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(expected, appender.output)
         XCTAssertEqual(level, appender.level!)
     }
-    
+
     func testWarn() {
         let expected = UUID().uuidString
         let level = LogLevel.warn
@@ -44,7 +44,7 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(expected, appender.output)
         XCTAssertEqual(level, appender.level!)
     }
-    
+
     func testError() {
         let expected = UUID().uuidString
         let level = LogLevel.error
@@ -56,7 +56,7 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(expected, appender.output)
         XCTAssertEqual(level, appender.level!)
     }
-    
+
     func testFatal() {
         let expected = UUID().uuidString
         let level = LogLevel.fatal
@@ -68,7 +68,7 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(expected, appender.output)
         XCTAssertEqual(level, appender.level!)
     }
-    
+
     func testAppender_output() {
         let expected = UUID().uuidString
         let logger = Logger(named: "")
@@ -77,7 +77,7 @@ class LoggerTests: XCTestCase {
         logger.log(.debug, expected)
         XCTAssertEqual(expected, appender.output)
     }
-    
+
     func testLog_FiltersFatal() {
         // Only Fatals should make it through
         let expected = UUID().uuidString
@@ -96,7 +96,7 @@ class LoggerTests: XCTestCase {
         logger.log(.fatal, expected)
         XCTAssertEqual(expected, appender.output)
     }
-    
+
     func testLog_FiltersError() {
         // Only Fatals and Errors should make it through
         let expected = UUID().uuidString
@@ -115,7 +115,7 @@ class LoggerTests: XCTestCase {
         logger.log(.fatal, expected)
         XCTAssertEqual(expected, appender.output)
     }
-    
+
     func testLog_FiltersWarn() {
         // Only Fatals, Errors, and Warnings should make it through
         let expected = UUID().uuidString
@@ -134,7 +134,7 @@ class LoggerTests: XCTestCase {
         logger.log(.fatal, expected)
         XCTAssertEqual(expected, appender.output)
     }
-    
+
     func testLog_FiltersInfo() {
         // Only Fatals, Errors, Warnings, and Info should make it through
         let expected = UUID().uuidString
@@ -153,7 +153,7 @@ class LoggerTests: XCTestCase {
         logger.log(.fatal, expected)
         XCTAssertEqual(expected, appender.output)
     }
-    
+
     func testLog_FiltersDebug() {
         // All levels should make it through
         let expected = UUID().uuidString
@@ -172,7 +172,7 @@ class LoggerTests: XCTestCase {
         logger.log(.fatal, expected)
         XCTAssertEqual(expected, appender.output)
     }
-    
+
     // MARK: -
     // MARK: Logging Details
     func testLog_sendsLoggingInfoToFormatter() {
@@ -222,7 +222,7 @@ class LoggerTests: XCTestCase {
         let actualLevel = info[LoggingInfoKey.level]
         XCTAssertEqual(expectedLevel, actualLevel as! String)
     }
-    
+
     func testThreadName() {
         let expected = UUID().uuidString
         Thread.current.name = expected
@@ -230,13 +230,13 @@ class LoggerTests: XCTestCase {
         let actual = logger.threadName
         XCTAssertEqual(expected, actual)
     }
-    
+
     func testExecutionQueue_Default() {
         let logger = Logger(named: "")
         let queue = logger.queue
         XCTAssertFalse(queue.label.isEmpty)
     }
-    
+
     func testExecution_CustomQueue() {
         let expectation = self.expectation(description: "Async threaded execution")
         let appender = MockFulfillmentAppender()
@@ -257,49 +257,53 @@ class LoggerTests: XCTestCase {
 }
 
 class MockAppender: Appender {
-    
+
     var output: String?
     var level: LogLevel?
+
+    var loglevel: LogLevel = .verbose
     
-    var formatter: SwiftLogger.Formatter? = nil
-    
+    var formatter: SwiftLogger.Formatter?
+
     var identifier: String
-    
+
     convenience init() {
         self.init(identifier: UUID().uuidString)
     }
-    
+
     required init(identifier: String) {
         self.identifier = identifier
     }
-    
+
     func sendLog(_ level: LogLevel, _ output: String) {
         self.level = level
         self.output = output
     }
-    
+
 }
 
 class MockFulfillmentAppender: Appender {
-    
+
     var expectation: XCTestExpectation?
     var executedOnMainThread: Bool?
     
-    var formatter: SwiftLogger.Formatter? = nil
-    
+    var loglevel: LogLevel = .verbose
+
+    var formatter: SwiftLogger.Formatter?
+
     var identifier: String
-    
+
     convenience init() {
         self.init(identifier: UUID().uuidString)
     }
-    
+
     required init(identifier: String) {
         self.identifier = identifier
     }
-    
+
     func sendLog(_ level: LogLevel, _ output: String) {
         executedOnMainThread = Thread.current.isMainThread
         expectation?.fulfill()
     }
-    
+
 }

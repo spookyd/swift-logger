@@ -10,11 +10,11 @@ import XCTest
 @testable import SwiftLogger
 
 class BasicFormatterTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
@@ -29,7 +29,7 @@ class BasicFormatterTests: XCTestCase {
         let actual = formatter.format(msg, nil)
         XCTAssertEqual(expected, actual)
     }
-    
+
     func testFormat_message_withMoreFormatting() {
         let msg = UUID().uuidString
         let expected = "~~\(msg)~~"
@@ -39,7 +39,7 @@ class BasicFormatterTests: XCTestCase {
         let actual = formatter.format(msg, nil)
         XCTAssertEqual(expected, actual)
     }
-    
+
     func testFormat_message_withMultiple() {
         let msg = UUID().uuidString
         let expected = "\(msg)::\(msg)"
@@ -49,7 +49,7 @@ class BasicFormatterTests: XCTestCase {
         let actual = formatter.format(msg, nil)
         XCTAssertEqual(expected, actual)
     }
-    
+
     func testFormat_Level() {
         let msg = UUID().uuidString
         let expectedLevel = UUID().uuidString
@@ -61,7 +61,7 @@ class BasicFormatterTests: XCTestCase {
         let actual = formatter.format(msg, info)
         XCTAssertEqual(expected, actual)
     }
-    
+
     func testFormat_CallingFile() {
         let msg = UUID().uuidString
         let expectedFile = UUID().uuidString
@@ -73,7 +73,7 @@ class BasicFormatterTests: XCTestCase {
         let actual = formatter.format(msg, info)
         XCTAssertEqual(expected, actual)
     }
-    
+
     func testFormat_CallingLine() {
         let msg = UUID().uuidString
         let expectedLine = 123
@@ -85,7 +85,7 @@ class BasicFormatterTests: XCTestCase {
         let actual = formatter.format(msg, info)
         XCTAssertEqual(expected, actual)
     }
-    
+
     func testFormat_CallingFunc() {
         let msg = UUID().uuidString
         let expectedFunc = UUID().uuidString
@@ -97,7 +97,7 @@ class BasicFormatterTests: XCTestCase {
         let actual = formatter.format(msg, info)
         XCTAssertEqual(expected, actual)
     }
-    
+
     func testFormat_ThreadName() {
         let msg = UUID().uuidString
         let expectedName = UUID().uuidString
@@ -109,7 +109,7 @@ class BasicFormatterTests: XCTestCase {
         let actual = formatter.format(msg, info)
         XCTAssertEqual(expected, actual)
     }
-    
+
     func testFormat_Date() {
         let msg = UUID().uuidString
         let expectedDate = Date()
@@ -121,7 +121,7 @@ class BasicFormatterTests: XCTestCase {
         let actual = formatter.format(msg, info)
         XCTAssertEqual(expected, actual)
     }
-    
+
     func testFormat_DateCustomFormatter() {
         let msg = UUID().uuidString
         let expectedDate = Date()
@@ -136,7 +136,7 @@ class BasicFormatterTests: XCTestCase {
         let actual = formatter.format(msg, info)
         XCTAssertEqual(expected, actual)
     }
-    
+
     func testFormat_layout() {
         let msg = UUID().uuidString
         let expectedLevel = UUID().uuidString
@@ -158,5 +158,5 @@ class BasicFormatterTests: XCTestCase {
         let actual = formatter.format(msg, info)
         XCTAssertEqual(expected, actual)
     }
-    
+
 }

@@ -21,19 +21,19 @@ import Foundation
    1. $M - The function/ method which invoked the log method
  */
 open class BasicLayoutFormatter: Formatter {
-    
+
     public var identifier: String
-    
+
     /// The default layout is `<Log Level>-<Log Message>`
     open var layout: String = "$l-$m"
-    
+
     /// Date formatter when using the $d tag. Providing `nil` but specifying $d will yield default date string 
     open var dateFormatter: DateFormatter?
-    
+
     init() {
         identifier = UUID().uuidString
     }
-    
+
     public func format(_ message: String, _ additionalInfo: LoggingInfo?) -> String {
         var text = layout
         text = text.replacingOccurrences(of: "$m", with: message)
@@ -64,5 +64,5 @@ open class BasicLayoutFormatter: Formatter {
         }
         return text
     }
-    
+
 }
