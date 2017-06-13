@@ -146,6 +146,10 @@ public final class Logger {
     public static func getLogger(by ID: String) -> Logger {
         return LoggerFactory.shared.getLogger(ID)
     }
+    
+    public static func setConfiguration(configuration: Configuration) {
+        return LoggerFactory.shared.set(configuration: configuration)
+    }
 
 }
 

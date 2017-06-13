@@ -80,6 +80,14 @@ class LoggerIntegrationTests: XCTestCase {
         XCTAssertEqual(1, someOtherAppender.collectedLogStrings.count)
     }
 
+    /// Validates Configuration is set on the logger factory
+    func testSetConfiguration() {
+        var configuration = Configuration.default
+        configuration.add(appender: CollectionAppender())
+        Logger.setConfiguration(configuration: configuration)
+        XCTAssertEqual(1, logger.appenders.count)
+    }
+
 }
 
 class CollectionAppender: Appender {

@@ -19,7 +19,7 @@ public struct Configuration {
 }
 
 extension Configuration {
-    static var `default`: Configuration {
+    public static var `default`: Configuration {
         return Configuration()
     }
 }
