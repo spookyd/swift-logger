@@ -1,0 +1,25 @@
+language: objective-c
+xcode_project: SwiftLogger.xcodeproj
+xcode_scheme: SwiftLogger
+osx_image: xcode9
+xcode_sdk: iphonesimulator11.0
+env:
+  global:
+      - FRAMEWORK_NAME=Swift-Logger
+before_install:
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+script:
+    - xcodebuild clean build test -project SwiftLogger.xcodeproj -scheme Swift-Logger -destination 'platform=iOS Simulator,name=iPhone 6,OS=11.0'
+before_deploy:
+  - carthage build --no-skip-current
+  - carthage archive $FRAMEWORK_NAME
+deploy:
+  provider: releases
+  api_key:
+    secure: WKYdxEkNnE93fn2QRVNGcFzBIdMQw92rsKX6tCGA8BuFfHGF+HAUgqhzD+aobMM006Qxm1zxVG1mnwyE5x/ACbI/YanTDA9LZI3BjkY5jAZ/g5ssGuHLjllqbuqeaJbcxlwkSJ6FcUmMSAU0MSL2AzlrrMc16LNKDSdoqEhO98EechxpHJISIQJANTXBUCcXIEgsxyaj1ktOUkwfh8c7Qld7t7wzy0/f6d/yQisG/KP9OXHFBK3w1p/oDZGTcnPrsJbY/l7EcD+Mg2GK21jZr/q7dcVOmP+zjIyORPap8NoA5Yx9Iekcy69a4CwWLqdsaABeulo90GChaUpDfRqN748ElgZp2cZWlRq4n+YBUaggga4ZuX1wTepeNmZmKTLD4cCnW4LZRlZYVMosus8MZpJn1zTTtmsvrR44/8vwUqVvp/6QdYbDoZ5Ck10rYepiHfFNwIi1G1wOPZBTaZXiWV9OURKGVF9lEXfpLWdYi8u3jHjD0LNaOOlhtqKa6LYDKcBAU7jlf06WsjK6kTcqSu6ZXuT6uG9R5JvDw2GztGLZ5yBjKIsQEPX27bQAHduIQ9TRSPPpvpMVdFF4D4Na26GVtq+mNev3kH6gPeuj2+dGl4fXHbJBtQYklnJJLMiu3K8vVxAn1X313deAqkDL/G4zd6XGmr7jXdeE1+zJ4CA=
+  file: Swift-Logger.framework.zip
+  skip_cleanup: true
+  on:
+      repo: spookyd/swift-logger
+    tags: true

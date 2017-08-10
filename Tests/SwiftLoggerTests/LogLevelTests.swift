@@ -3,11 +3,11 @@
 //  Swift-Logger
 //
 //  Created by Luke Davis on 3/18/17.
-//
+//  Copyright © 2017 Lucky 13 Technologies, LLC. All rights reserved.
 //
 
-import XCTest
 @testable import SwiftLogger
+import XCTest
 
 class LogLevelTests: XCTestCase {
 
@@ -96,9 +96,9 @@ class LogLevelTests: XCTestCase {
     func testLogLevel_description() {
         for level in allLogValues {
             if level != .off {
-                XCTAssert(level.description.characters.count > 0)
+                XCTAssertFalse(level.description.characters.isEmpty)
             } else {
-                XCTAssert(level.description.characters.count == 0)
+                XCTAssertTrue(level.description.characters.isEmpty)
             }
         }
     }

@@ -1,9 +1,9 @@
 //
 //  ConsolePrintAppender.swift
-//  Logger
+//  Swift-Logger
 //
 //  Created by Luke Davis on 4/13/17.
-//
+//  Copyright © 2017 Lucky 13 Technologies, LLC. All rights reserved.
 //
 
 import Foundation
@@ -11,7 +11,7 @@ import Foundation
 public class ConsolePrintAppender: Appender {
 
     public var identifier: String = "com.lucky13.printOutput"
-    
+
     public var loglevel: LogLevel = .verbose
 
     public var formatter: SwiftLogger.Formatter?

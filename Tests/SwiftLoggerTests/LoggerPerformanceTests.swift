@@ -1,13 +1,13 @@
 //
 //  LoggerPerformanceTests.swift
-//  Logger
+//  Swift-Logger
 //
 //  Created by Luke Davis on 4/13/17.
-//
+//  Copyright © 2017 Lucky 13 Technologies, LLC. All rights reserved.
 //
 
-import XCTest
 @testable import SwiftLogger
+import XCTest
 
 class LoggerPerformanceTests: XCTestCase {
 
