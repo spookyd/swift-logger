@@ -3,11 +3,11 @@
 //  Swift-Logger
 //
 //  Created by Luke Davis on 3/26/17.
-//
+//  Copyright © 2017 Lucky 13 Technologies, LLC. All rights reserved.
 //
 
-import XCTest
 @testable import SwiftLogger
+import XCTest
 
 class BasicFormatterTests: XCTestCase {
 
@@ -145,7 +145,8 @@ class BasicFormatterTests: XCTestCase {
         let expectedFunc = UUID().uuidString
         let expectedDate = Date()
         let expectedName = UUID().uuidString
-        let expected = "\(expectedDate)-\(expectedLevel)::\(msg)(\(expectedFile):\(expectedLine)-\(expectedFunc)) on \(expectedName)"
+        let expected = "\(expectedDate)-\(expectedLevel)::\(msg)(\(expectedFile):" +
+                        "\(expectedLine)-\(expectedFunc)) on \(expectedName)"
         let layout = "$d-$l::$m($F:$L-$M) on $t"
         let formatter = BasicLayoutFormatter()
         formatter.layout = layout

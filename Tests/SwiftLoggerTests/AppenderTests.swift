@@ -3,11 +3,11 @@
 //  Swift-Logger
 //
 //  Created by Luke Davis on 3/18/17.
-//
+//  Copyright © 2017 Lucky 13 Technologies, LLC. All rights reserved.
 //
 
-import XCTest
 @testable import SwiftLogger
+import XCTest
 
 class AppenderTests: XCTestCase {
 
@@ -29,7 +29,7 @@ class AppenderTests: XCTestCase {
         XCTAssertEqual(expectedLevel, appender.level)
         XCTAssertEqual(expectedMessage, appender.output)
     }
-    
+
     func testExecuteLog_lowerLogLevel() {
         let appender = MockAppender()
         appender.loglevel = .error

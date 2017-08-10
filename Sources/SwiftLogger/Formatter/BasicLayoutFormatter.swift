@@ -3,7 +3,7 @@
 //  Swift-Logger
 //
 //  Created by Luke Davis on 3/26/17.
-//
+//  Copyright © 2017 Lucky 13 Technologies, LLC. All rights reserved.
 //
 
 import Foundation

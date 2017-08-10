@@ -1,7 +1,15 @@
-import XCTest
-@testable import SwiftLogger
+//
+//  LoggerTests.swift
+//  Swift-Logger
+//
+//  Created by Luke Davis on 4/8/17.
+//  Copyright © 2017 Lucky 13 Technologies, LLC. All rights reserved.
+//
 
-class LoggerTests: XCTestCase {
+@testable import SwiftLogger
+import XCTest
+
+class LoggerTests: XCTestCase { // swiftlint:disable:this type_body_length force_cast
 
     func testCreateLogger() {
         let expected = UUID().uuidString
@@ -192,14 +200,15 @@ class LoggerTests: XCTestCase {
         let actualDate = info[LoggingInfoKey.date]
         XCTAssertNotNil(actualDate)
         let actualFile = info[LoggingInfoKey.file]
-        XCTAssertEqual(expectedFile, actualFile as! String)
+        XCTAssertEqual(expectedFile, actualFile as! String) // swiftlint:disable:this force_cast
         let actualLine = info[LoggingInfoKey.line]
-        XCTAssertEqual(expectedLine, actualLine as! Int)
+        XCTAssertEqual(expectedLine, actualLine as! Int) // swiftlint:disable:this force_cast
         let actualFunction = info[LoggingInfoKey.function]
-        XCTAssertEqual(expectedFunction, actualFunction as! String)
+        XCTAssertEqual(expectedFunction, actualFunction as! String) // swiftlint:disable:this force_cast
         let actualLevel = info[LoggingInfoKey.level]
-        XCTAssertEqual(expectedLevel, actualLevel as! String)
+        XCTAssertEqual(expectedLevel, actualLevel as! String) // swiftlint:disable:this force_cast
     }
+
     func testLog_sendsLoggingInfoToFormatter_missingData() {
         let expected = UUID().uuidString
         let expectedLevel = LogLevel.debug.description
@@ -220,7 +229,7 @@ class LoggerTests: XCTestCase {
         let actualFunction = info[LoggingInfoKey.function]
         XCTAssertNil(actualFunction)
         let actualLevel = info[LoggingInfoKey.level]
-        XCTAssertEqual(expectedLevel, actualLevel as! String)
+        XCTAssertEqual(expectedLevel, actualLevel as! String) // swiftlint:disable:this force_cast
     }
 
     func testThreadName() {
@@ -262,7 +271,7 @@ class MockAppender: Appender {
     var level: LogLevel?
 
     var loglevel: LogLevel = .verbose
-    
+
     var formatter: SwiftLogger.Formatter?
 
     var identifier: String
@@ -286,7 +295,7 @@ class MockFulfillmentAppender: Appender {
 
     var expectation: XCTestExpectation?
     var executedOnMainThread: Bool?
-    
+
     var loglevel: LogLevel = .verbose
 
     var formatter: SwiftLogger.Formatter?

@@ -3,7 +3,7 @@
 //  Swift-Logger
 //
 //  Created by Luke Davis on 3/18/17.
-//
+//  Copyright © 2017 Lucky 13 Technologies, LLC. All rights reserved.
 //
 
 import Foundation
@@ -18,7 +18,7 @@ public protocol Appender {
 
     /// The formatter to be used to format the log message before it is sent to the appender
     var formatter: Formatter? { get set }
-    
+
     /// The maximum level of logging output for the given appender
     var loglevel: LogLevel { get }
 

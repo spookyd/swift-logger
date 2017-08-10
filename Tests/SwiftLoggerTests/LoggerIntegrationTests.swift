@@ -1,13 +1,13 @@
 //
 //  LoggerIntegrationTests.swift
-//  LoggerIntegrationTests
+//  Swift-Logger
 //
 //  Created by Luke Davis on 4/8/17.
-//
+//  Copyright © 2017 Lucky 13 Technologies, LLC. All rights reserved.
 //
 
-import XCTest
 @testable import SwiftLogger
+import XCTest
 
 class LoggerIntegrationTests: XCTestCase {
 
@@ -95,7 +95,7 @@ class CollectionAppender: Appender {
     var collectedLogStrings: [(LogLevel, String)] = []
 
     var identifier: String
-    
+
     var loglevel: LogLevel = .verbose
 
     var formatter: SwiftLogger.Formatter?

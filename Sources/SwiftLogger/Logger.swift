@@ -1,3 +1,11 @@
+//
+//  Logger.swift
+//  Swift-Logger
+//
+//  Created by Luke Davis on 3/18/17.
+//  Copyright © 2017 Lucky 13 Technologies, LLC. All rights reserved.
+//
+
 import Foundation
 
 /** 
@@ -146,7 +154,7 @@ public final class Logger {
     public static func getLogger(by ID: String) -> Logger {
         return LoggerFactory.shared.getLogger(ID)
     }
-    
+
     public static func setConfiguration(configuration: Configuration) {
         return LoggerFactory.shared.set(configuration: configuration)
     }
