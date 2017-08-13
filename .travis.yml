@@ -10,7 +10,7 @@ before_install:
   - brew update
   - brew outdated carthage || brew upgrade carthage
 script:
-    - xcodebuild clean build test -project SwiftLogger.xcodeproj -scheme SwiftLogger -destination 'platform=iOS Simulator,name=iPhone 6,OS=11.0'
+    - xcodebuild clean build test -project SwiftLogger.xcodeproj -scheme SwiftLogger -destination 'platform=iOS Simulator,name=iPhone 6,OS=11.0' IS_CI_BUILD='true'
 before_deploy:
   - carthage build --no-skip-current
   - carthage archive $FRAMEWORK_NAME
