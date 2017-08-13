@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		OBJ_38 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Configuration.swift */; };
+		OBJ_39 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Logger.swift */; };
+		OBJ_40 /* LoggerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* LoggerFactory.swift */; };
+		OBJ_41 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* LogLevel.swift */; };
+		OBJ_42 /* Appender.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Appender.swift */; };
+		OBJ_43 /* ConsolePrintAppender.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* ConsolePrintAppender.swift */; };
+		OBJ_44 /* BasicLayoutFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* BasicLayoutFormatter.swift */; };
+		OBJ_45 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Formatter.swift */; };
+		OBJ_52 /* AppenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* AppenderTests.swift */; };
+		OBJ_53 /* BasicFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* BasicFormatterTests.swift */; };
+		OBJ_54 /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* ConfigurationTests.swift */; };
+		OBJ_55 /* FormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* FormatterTests.swift */; };
+		OBJ_56 /* LoggerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* LoggerFactoryTests.swift */; };
+		OBJ_57 /* LoggerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* LoggerIntegrationTests.swift */; };
+		OBJ_58 /* LoggerPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* LoggerPerformanceTests.swift */; };
+		OBJ_59 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* LoggerTests.swift */; };
+		OBJ_60 /* LogLevelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* LogLevelTests.swift */; };
+		OBJ_62 /* SwiftLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* SwiftLogger.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8418D9F71EA3C03500A0C0B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_33;
+			remoteInfo = SwiftLogger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		OBJ_10 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		OBJ_11 /* LoggerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerFactory.swift; sourceTree = "<group>"; };
+		OBJ_12 /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
+		OBJ_14 /* Appender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appender.swift; sourceTree = "<group>"; };
+		OBJ_15 /* ConsolePrintAppender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolePrintAppender.swift; sourceTree = "<group>"; };
+		OBJ_17 /* BasicLayoutFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicLayoutFormatter.swift; sourceTree = "<group>"; };
+		OBJ_18 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		OBJ_21 /* AppenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppenderTests.swift; sourceTree = "<group>"; };
+		OBJ_22 /* BasicFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicFormatterTests.swift; sourceTree = "<group>"; };
+		OBJ_23 /* ConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
+		OBJ_24 /* FormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterTests.swift; sourceTree = "<group>"; };
+		OBJ_25 /* LoggerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerFactoryTests.swift; sourceTree = "<group>"; };
+		OBJ_26 /* LoggerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerIntegrationTests.swift; sourceTree = "<group>"; };
+		OBJ_27 /* LoggerPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPerformanceTests.swift; sourceTree = "<group>"; };
+		OBJ_28 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
+		OBJ_29 /* LogLevelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevelTests.swift; sourceTree = "<group>"; };
+		OBJ_31 /* SwiftLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_32 /* SwiftLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = SwiftLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_62 /* SwiftLogger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		OBJ_13 /* Appender */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_14 /* Appender.swift */,
+				OBJ_15 /* ConsolePrintAppender.swift */,
+			);
+			path = Appender;
+			sourceTree = "<group>";
+		};
+		OBJ_16 /* Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_17 /* BasicLayoutFormatter.swift */,
+				OBJ_18 /* Formatter.swift */,
+			);
+			path = Formatter;
+			sourceTree = "<group>";
+		};
+		OBJ_19 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_20 /* SwiftLoggerTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_20 /* SwiftLoggerTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_21 /* AppenderTests.swift */,
+				OBJ_22 /* BasicFormatterTests.swift */,
+				OBJ_23 /* ConfigurationTests.swift */,
+				OBJ_24 /* FormatterTests.swift */,
+				OBJ_25 /* LoggerFactoryTests.swift */,
+				OBJ_26 /* LoggerIntegrationTests.swift */,
+				OBJ_27 /* LoggerPerformanceTests.swift */,
+				OBJ_28 /* LoggerTests.swift */,
+				OBJ_29 /* LogLevelTests.swift */,
+			);
+			name = SwiftLoggerTests;
+			path = Tests/SwiftLoggerTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_31 /* SwiftLogger.framework */,
+				OBJ_32 /* SwiftLoggerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_19 /* Tests */,
+				OBJ_30 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* SwiftLogger */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* SwiftLogger */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* Configuration.swift */,
+				OBJ_10 /* Logger.swift */,
+				OBJ_11 /* LoggerFactory.swift */,
+				OBJ_12 /* LogLevel.swift */,
+				OBJ_13 /* Appender */,
+				OBJ_16 /* Formatter */,
+			);
+			name = SwiftLogger;
+			path = Sources/SwiftLogger;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		OBJ_33 /* SwiftLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_34 /* Build configuration list for PBXNativeTarget "SwiftLogger" */;
+			buildPhases = (
+				OBJ_37 /* Sources */,
+				OBJ_46 /* Frameworks */,
+				84DDB2CE1F3C7B910075B509 /* Lint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftLogger;
+			productName = SwiftLogger;
+			productReference = OBJ_31 /* SwiftLogger.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		OBJ_47 /* SwiftLoggerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_48 /* Build configuration list for PBXNativeTarget "SwiftLoggerTests" */;
+			buildPhases = (
+				OBJ_51 /* Sources */,
+				OBJ_61 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_63 /* PBXTargetDependency */,
+			);
+			name = SwiftLoggerTests;
+			productName = SwiftLoggerTests;
+			productReference = OBJ_32 /* SwiftLoggerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					OBJ_33 = {
+						LastSwiftMigration = 0900;
+					};
+					OBJ_47 = {
+						LastSwiftMigration = 0900;
+					};
+				};
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "SwiftLogger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				OBJ_33 /* SwiftLogger */,
+				OBJ_47 /* SwiftLoggerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84DDB2CE1F3C7B910075B509 /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_38 /* Configuration.swift in Sources */,
+				OBJ_39 /* Logger.swift in Sources */,
+				OBJ_40 /* LoggerFactory.swift in Sources */,
+				OBJ_41 /* LogLevel.swift in Sources */,
+				OBJ_42 /* Appender.swift in Sources */,
+				OBJ_43 /* ConsolePrintAppender.swift in Sources */,
+				OBJ_44 /* BasicLayoutFormatter.swift in Sources */,
+				OBJ_45 /* Formatter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_52 /* AppenderTests.swift in Sources */,
+				OBJ_53 /* BasicFormatterTests.swift in Sources */,
+				OBJ_54 /* ConfigurationTests.swift in Sources */,
+				OBJ_55 /* FormatterTests.swift in Sources */,
+				OBJ_56 /* LoggerFactoryTests.swift in Sources */,
+				OBJ_57 /* LoggerIntegrationTests.swift in Sources */,
+				OBJ_58 /* LoggerPerformanceTests.swift in Sources */,
+				OBJ_59 /* LoggerTests.swift in Sources */,
+				OBJ_60 /* LogLevelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_33 /* SwiftLogger */;
+			targetProxy = 8418D9F71EA3C03500A0C0B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SwiftLogger.xcodeproj/SwiftLogger_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = SwiftLogger;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SwiftLogger;
+			};
+			name = Debug;
+		};
+		OBJ_36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SwiftLogger.xcodeproj/SwiftLogger_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = SwiftLogger;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SwiftLogger;
+			};
+			name = Release;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SwiftLogger.xcodeproj/SwiftLoggerTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SwiftLoggerTests;
+			};
+			name = Debug;
+		};
+		OBJ_50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SwiftLogger.xcodeproj/SwiftLoggerTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SwiftLoggerTests;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_2 /* Build configuration list for PBXProject "SwiftLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_34 /* Build configuration list for PBXNativeTarget "SwiftLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_35 /* Debug */,
+				OBJ_36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_48 /* Build configuration list for PBXNativeTarget "SwiftLoggerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_49 /* Debug */,
+				OBJ_50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}

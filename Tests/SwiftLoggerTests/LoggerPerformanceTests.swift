@@ -18,7 +18,7 @@ class LoggerPerformanceTests: XCTestCase {
         let formatter = BasicLayoutFormatter()
         let layout = "$d-$l::$m($F:$L-$M) on $t"
         formatter.layout = layout
-        appender = ConsolePrintAppender(formatter: formatter)
+        appender = EmptyAppender(formatter: formatter)
     }
 
     override func tearDown() {
@@ -65,4 +65,18 @@ class LoggerPerformanceTests: XCTestCase {
         }
     }
 
+}
+
+class EmptyAppender: ConsolePrintAppender {
+    // Travis CI has a log output of 4MB max. Because of this limitation it causes the build to fail.
+    // To get around this limitation we will check for a build variable telling us that it is a
+    // travis build and to not output to the log.
+    let isCIBuild = ProcessInfo.processInfo.environment["IS_CI_BUILD"]
+
+    override func sendLog(_ level: LogLevel, _ output: String) {
+        if isCIBuild == "true" {
+            return
+        }
+        super.sendLog(level, output)
+    }
 }

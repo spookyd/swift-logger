@@ -2,6 +2,8 @@
 
 ---
 
+[![Build Status](https://travis-ci.org/spookyd/swift-logger.svg?branch=master)](https://travis-ci.org/spookyd/swift-logger)
+
 Swift Logger is a simple logger.
 
 ## How to Use
