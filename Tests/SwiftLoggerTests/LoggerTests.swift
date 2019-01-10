@@ -9,7 +9,7 @@
 @testable import SwiftLogger
 import XCTest
 
-class LoggerTests: XCTestCase { // swiftlint:disable:this type_body_length force_cast
+class LoggerTests: XCTestCase { // swiftlint:disable:this type_body_length
 
     func testCreateLogger() {
         let expected = UUID().uuidString

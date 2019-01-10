@@ -144,7 +144,7 @@ public final class Logger {
     }
 
     internal var threadName: String {
-        if let name = Thread.current.name, !name.characters.isEmpty {
+        if let name = Thread.current.name, !name.isEmpty {
             return name
         }
         return String(describing: Thread.current)

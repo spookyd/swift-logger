@@ -96,9 +96,9 @@ class LogLevelTests: XCTestCase {
     func testLogLevel_description() {
         for level in allLogValues {
             if level != .off {
-                XCTAssertFalse(level.description.characters.isEmpty)
+                XCTAssertFalse(level.description.isEmpty)
             } else {
-                XCTAssertTrue(level.description.characters.isEmpty)
+                XCTAssertTrue(level.description.isEmpty)
             }
         }
     }

@@ -6,6 +6,12 @@
 
 Swift Logger is a simple logger.
 
+## Requirements
+
+  - Swift 4
+
+> [v0.1.0](https://github.com/spookyd/swift-logger/releases/tag/v0.1.0) supports Swift 3.
+
 ## How to Use
 
 ### Basic Use
